@@ -16,26 +16,28 @@ import java.util.List;
 
 import com.Todo.Todo;
 
-@Path("/TodoService")
+@Path("/task")
 public class TodoService {
 	TodoDAO todoDao = new TodoDAO();
 
 	@POST
-	@Path("/task/add")
+	@Path("/add")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public String addTask(@FormParam("taskName") String task, @FormParam("dueDate") Date dueDate,
 			@Context HttpServletResponse servletResponse) throws IOException {
+		System.out.println("add task method invoked");
 		Todo todo = new Todo(task, dueDate);
 		int result = todoDao.addTask(todo);
 		if (result == 1) {
 			return "SUCCESS_RESULT";
-		}
-		return "FAILURE_RESULT";
+		} else
+			return "FAILURE_RESULT";
+
 	}
 
 	@GET
-	@Path("/task/showtasks")
+	@Path("/showtasks")
 	@Produces(MediaType.APPLICATION_XML)
 	public List<Todo> getAllTasks() {
 		List<Todo> ls = todoDao.getAllTasks();

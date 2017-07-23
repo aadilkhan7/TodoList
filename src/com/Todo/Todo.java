@@ -1,6 +1,6 @@
 package com.Todo;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -14,9 +14,9 @@ public class Todo {
 
 	}
 
-	Todo(String task) {
+	Todo(String task, Date date) {
 		this.task = task;
-		this.due = new Date();
+		this.due = date;
 	}
 
 	public String getTask() {
