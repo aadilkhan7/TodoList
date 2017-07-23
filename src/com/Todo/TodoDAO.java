@@ -29,8 +29,8 @@ public class TodoDAO {
 
 	}
 
-	List<Todo> getAllTasks() {
-		List<Todo> allTasks = new ArrayList<Todo>();
+	List<TodoUtil> getAllTasks() {
+		List<TodoUtil> allTasks = new ArrayList<TodoUtil>();
 		try {
 			Connection con = MySQLConnection.getConnection();
 			String getTasks = "select * from todoList";
@@ -40,7 +40,7 @@ public class TodoDAO {
 				String a = rs.getString(2);
 				java.util.Date b = (java.util.Date) rs.getDate(3);
 				System.out.println("getAllTask " + a + " " + b);
-				Todo task = new Todo(a, (java.sql.Date) b);
+				TodoUtil task = new TodoUtil(a, b);
 				allTasks.add(task);
 			}
 			con.close();

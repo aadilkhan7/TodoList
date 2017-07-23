@@ -39,8 +39,8 @@ public class TodoService {
 	@GET
 	@Path("/showtasks")
 	@Produces(MediaType.APPLICATION_XML)
-	public List<Todo> getAllTasks() {
-		List<Todo> ls = todoDao.getAllTasks();
+	public List<TodoUtil> getAllTasks() {
+		List<TodoUtil> ls = todoDao.getAllTasks();
 		System.out.println(ls);
 		return ls;
 	}

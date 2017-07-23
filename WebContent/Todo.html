@@ -7,9 +7,12 @@
 <body>
 <form action = "rest/task/add" method = "post">
 	<input type = "text" name = "taskName" id = "taskName">
-	<input type = "date" name = "dueDate" id = "dueDate">
+	<input type = "datetime-local" name = "dueDate" id = "dueDate">
 	<input type = "submit" value = "Add Task">
 </form>
 
+<form action = "rest/task/showtasks" method = "get">
+<input type = "submit" value = "Show Tasks">
+</form>
 </body>
 </html>
