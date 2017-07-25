@@ -11,7 +11,7 @@ public class MySQLConnection {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
-			String Password = "aadilkhan7";
+			String Password = "";
 			String Host = "jdbc:mysql://localhost/todo";
 			String User = "root";
 			System.out.println("getting connection");
